@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#123b39" />
+  <title>ElderEase — Technology made simpler</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans+Kannada:wght@400;600;700&family=Noto+Sans+Tamil:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="on-welcome">
+  <section class="welcome-screen" id="welcome-screen" aria-labelledby="w-title">
+    <div class="w-card">
+      <div class="w-brand"><span class="brand-mark" aria-hidden="true">e</span><strong>ElderEase</strong></div>
+      <h1 id="w-title" tabindex="-1" data-i18n="w_title">Welcome to ElderEase</h1>
+      <p class="w-sub" data-i18n="w_sub">Please choose your language.</p>
+      <div class="sos-mount"></div>
+      <h2 class="w-h" id="w-lang-label" data-i18n="w_lang_h">Choose your language</h2>
+      <div class="lang-controls w-langs" role="radiogroup" aria-labelledby="w-lang-label">
+        <button type="button" role="radio" aria-checked="true" data-lang="en" lang="en">English</button>
+        <button type="button" role="radio" aria-checked="false" data-lang="hi" lang="hi">हिन्दी</button>
+        <button type="button" role="radio" aria-checked="false" data-lang="kn" lang="kn">ಕನ್ನಡ</button>
+      </div>
+      <button type="button" class="w-other" id="w-other" aria-expanded="false" aria-controls="w-other-list" data-i18n="w_other">Other languages</button>
+      <div class="lang-controls w-langs" id="w-other-list" role="radiogroup" aria-labelledby="w-lang-label" hidden>
+        <button type="button" role="radio" aria-checked="false" data-lang="ta" lang="ta">தமிழ்</button>
+        <button type="button" role="radio" aria-checked="false" data-lang="te" lang="te">తెలుగు</button>
+        <button type="button" role="radio" aria-checked="false" data-lang="mr" lang="mr">मराठी</button>
+        <button type="button" role="radio" aria-checked="false" data-lang="bn" lang="bn">বাংলা</button>
+      </div>
+      <p class="w-pending" id="w-pending" role="status" hidden></p>
+      <h2 class="w-h" data-i18n="e_h">Emergency contact</h2>
+      <div class="ec-mount"></div>
+      <h2 class="w-h" data-i18n="w_look">Make it easy to see</h2>
+      <div class="w-tools">
+        <div class="size-controls" role="group"><button id="w-smaller" data-i18n-aria="s_smaller" aria-label="Decrease text size">A−</button><span class="size-label" id="w-size-label" aria-live="polite">Normal</span><button id="w-larger" data-i18n-aria="s_larger" aria-label="Increase text size">A+</button></div>
+        <label class="w-switch"><span data-i18n="s_contrast">High contrast</span><span class="switch"><input type="checkbox" id="w-contrast" data-i18n-aria="s_contrast" aria-label="High contrast"><span class="slider"></span></span></label>
+        <button type="button" class="secondary-button" id="w-hear" data-i18n="w_hear">🔊 Hear this page</button>
+      </div>
+      <button type="button" class="primary-button w-continue" id="w-continue" data-i18n="w_continue">Continue →</button>
+    </div>
+  </section>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to main content</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#" aria-label="ElderEase home">
+        <span class="brand-mark">e</span>
+        <span><strong>ElderEase</strong><small data-i18n="brand_tag">Simple. Clear. Connected.</small></span>
+      </a>
+      <div class="side-label" data-i18n="side_label">YOUR SPACE</div>
+      <button class="nav-item active" data-view="home" aria-current="page"><span aria-hidden="true">⌂</span> <span data-i18n="nav_home">Home</span></button>
+      <button class="nav-item" data-view="contacts"><span aria-hidden="true">♡</span> <span data-i18n="nav_people">My people</span></button>
+      <button class="nav-item" data-view="help"><span aria-hidden="true">☏</span> <span data-i18n="nav_help">Get help</span></button>
+      <button class="nav-item" data-view="pills"><span aria-hidden="true">💊</span> <span data-i18n="nav_pills">Daily pills</span></button>
+      <button class="nav-item" data-view="messages"><span aria-hidden="true">✉</span> <span data-i18n="nav_msgs">Messages</span></button>
+      <button class="nav-item" data-view="feedback"><span aria-hidden="true">✎</span> <span data-i18n="nav_fb">Feedback &amp; testing</span></button>
+      <div class="sidebar-note">
+        <span class="note-icon" aria-hidden="true">☀</span>
+        <strong data-i18n="note_title">Take your time.</strong>
+        <p data-i18n="note_body">There is no rush. Everything you need is right here.</p>
+      </div>
+      <div class="sidebar-bottom">
+        <span class="online-dot"></span> <span data-i18n="acc_on">Accessibility mode is on</span>
+      </div>
+    </aside>
+
+    <main class="main-content" id="main" tabindex="-1">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow" id="today-label">YOUR FRIENDLY PHONE SPACE</p>
+          <h1 id="page-title" aria-live="polite">Good morning!</h1>
+        </div>
+        <div class="top-actions">
+          <button class="icon-button" id="change-lang" data-i18n-aria="w_change" data-i18n-title="w_change" aria-label="Change language" title="Change language">🌐</button>
+          <button class="icon-button" id="read-page" data-i18n-aria="read_page" data-i18n-title="read_page" aria-label="Read page aloud" title="Read page aloud">🔊</button>
+          <button class="profile-chip" id="settings-shortcut" data-i18n-aria="open_settings_aria" aria-label="Open accessibility settings"><span class="avatar" aria-hidden="true">S</span><span data-i18n="settings">Settings</span></button>
+        </div>
+      </header>
+
+      <section class="view active" id="home-view">
+        <div class="welcome-card">
+          <div>
+            <span class="welcome-tag" data-i18n="welcome_tag">A LITTLE HELP, A LOT OF INDEPENDENCE</span>
+            <h2 data-i18n-html="welcome_h2">What would you<br>like to do today?</h2>
+            <p data-i18n="welcome_p">Choose a big button below. You can always come back home.</p>
+          </div>
+          <div class="welcome-art" aria-hidden="true"><span class="sun">☀</span><span class="plant">✿</span><span class="art-circle"></span></div>
+        </div>
+
+        <div class="section-heading"><div><span class="eyebrow" data-i18n="quick_eyebrow">QUICK ACCESS</span><h2 data-i18n="quick_h">Your everyday actions</h2></div><span class="small-hint" data-i18n="quick_hint">Tap any card to begin</span></div>
+        <div class="action-grid">
+          <button class="action-card call-card" data-action="call">
+            <span class="action-icon" aria-hidden="true">☎</span><strong data-i18n="card_call_t">Make a call</strong><small data-i18n="card_call_s">Talk to someone you know</small><span class="card-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="action-card people-card" data-action="contacts">
+            <span class="action-icon" aria-hidden="true">♡</span><strong data-i18n="card_people_t">My people</strong><small data-i18n="card_people_s">Find family and friends</small><span class="card-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="action-card message-card" data-action="messages">
+            <span class="action-icon" aria-hidden="true">✉</span><strong data-i18n="card_msg_t">Messages</strong><small data-i18n="card_msg_s">See a sample message</small><span class="card-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="action-card help-card" data-action="help">
+            <span class="action-icon" aria-hidden="true">＋</span><strong data-i18n="card_help_t">Emergency help</strong><small data-i18n="card_help_s">See your help options</small><span class="card-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="action-card pills-card" data-action="pills">
+            <span class="action-icon" aria-hidden="true">💊</span><strong data-i18n="card_pills_t">Daily pills</strong><small data-i18n="card_pills_s">Check today's tablets</small><span class="card-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="action-card feedback-card" data-action="feedback">
+            <span class="action-icon" aria-hidden="true">✎</span><strong data-i18n="card_fb_t">Feedback &amp; testing</strong><small data-i18n="card_fb_s">Tell us how it went</small><span class="card-arrow" aria-hidden="true">↗</span>
+          </button>
+        </div>
+
+        <div class="bottom-grid">
+          <div class="tip-card">
+            <div class="tip-icon" aria-hidden="true">✦</div>
+            <div><span class="eyebrow" data-i18n="tip_eyebrow">A GENTLE REMINDER</span><h3 data-i18n="tip_h">You are doing great.</h3><p data-i18n="tip_p">If something feels confusing, tap the speaker button and the page can read its instructions aloud.</p></div>
+          </div>
+          <div class="settings-card">
+            <div><span class="eyebrow" data-i18n="cmf_eyebrow">MAKE IT COMFORTABLE</span><h3 data-i18n="cmf_h">Change how things look</h3><p data-i18n="cmf_p">Make text bigger or choose stronger contrast.</p></div>
+            <button class="secondary-button" id="open-settings"><span data-i18n="cmf_btn">Accessibility settings</span> <span aria-hidden="true">→</span></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="contacts-view">
+        <div class="page-intro"><span class="eyebrow" data-i18n="c_eyebrow">STAY CLOSE</span><h2 data-i18n="c_h">Your people</h2><p data-i18n="c_p">People you may want to reach quickly. These are sample contacts for this prototype.</p></div>
+        <div class="contact-list" id="contact-list">
+          <article class="contact-card"><span class="contact-avatar peach" aria-hidden="true">A</span><div><strong data-i18n="c_anita">Anita (Daughter)</strong><small data-i18n="c_family">Family · Sample contact</small></div><button class="call-small" data-contact="anita" data-i18n="b_anita">Call Anita</button></article>
+          <article class="contact-card"><span class="contact-avatar blue" aria-hidden="true">R</span><div><strong data-i18n="c_rahul">Rahul (Son)</strong><small data-i18n="c_family">Family · Sample contact</small></div><button class="call-small" data-contact="rahul" data-i18n="b_rahul">Call Rahul</button></article>
+          <article class="contact-card"><span class="contact-avatar lilac" aria-hidden="true">D</span><div><strong data-i18n="c_doc">Dr. Mehta</strong><small data-i18n="c_doctor">Doctor · Sample contact</small></div><button class="call-small" data-contact="doc" data-i18n="b_doc">Call doctor</button></article>
+        </div>
+        <div class="notice"><span aria-hidden="true">ⓘ</span><p data-i18n="c_notice">These names are examples only. A real version would let the user or caregiver add verified contacts.</p></div>
+      </section>
+
+      <section class="view" id="help-view">
+        <div class="page-intro"><span class="eyebrow" data-i18n="h_eyebrow">HELP IS CLOSE BY</span><h2 data-i18n="h_h">What kind of help do you need?</h2><p data-i18n="h_p">Choose an option. This demo will show what would happen next.</p></div>
+        <div class="sos-mount"></div>
+        <div class="ec-mount"></div>
+        <div class="help-options">
+          <button class="help-option" id="demo-sos"><span class="help-symbol red" aria-hidden="true">!</span><span><strong data-i18n="h_sos_t">Emergency situation</strong><small data-i18n="h_sos_s">Show emergency contact options</small></span><b aria-hidden="true">→</b></button>
+          <button class="help-option" id="demo-family"><span class="help-symbol green" aria-hidden="true">♡</span><span><strong data-i18n="h_fam_t">Contact my family</strong><small data-i18n="h_fam_s">Choose someone from your people</small></span><b aria-hidden="true">→</b></button>
+          <button class="help-option" id="demo-instructions"><span class="help-symbol gold" aria-hidden="true">?</span><span><strong data-i18n="h_ins_t">I need help using this app</strong><small data-i18n="h_ins_s">Hear a simple explanation</small></span><b aria-hidden="true">→</b></button>
+        </div>
+        <p class="safety-note" data-i18n="h_safety">Prototype note: This page does not contact emergency services. In a real emergency, use your local emergency number or ask someone nearby for help.</p>
+      </section>
+
+      <section class="view" id="messages-view">
+        <div class="page-intro"><span class="eyebrow" data-i18n="m_eyebrow">KEEP IN TOUCH</span><h2 data-i18n="m_h">Messages</h2><p data-i18n="m_p">A simple example of how a message could appear.</p></div>
+        <div id="msg-list"></div>
+      </section>
+
+      <section class="view" id="pills-view">
+        <div class="page-intro"><span class="eyebrow" data-i18n="p_eyebrow">EVERY DAY</span><h2 data-i18n="p_h">Daily pills</h2><p data-i18n="p_p">Tap Taken after each pill. The list starts fresh every morning.</p></div>
+        <div id="pills-mount"></div>
+        <p class="safety-note" data-i18n="p_note">Reminder only. Always follow your doctor's advice.</p>
+      </section>
+
+      <section class="view" id="feedback-view">
+        <div class="page-intro"><span class="eyebrow" data-i18n="f_eyebrow">YOUR VOICE</span><h2 data-i18n="f_h">Feedback and testing</h2><p data-i18n="f_p">Help us improve ElderEase. Your answers stay on this device.</p></div>
+        <div class="fb-box"><h3 data-i18n="f_rate_h">How easy was ElderEase to use?</h3><div class="rate" role="radiogroup"><button type="button" role="radio" aria-checked="false" aria-label="1" data-x="rate:1">😞</button><button type="button" role="radio" aria-checked="false" aria-label="2" data-x="rate:2">😐</button><button type="button" role="radio" aria-checked="false" aria-label="3" data-x="rate:3">🙂</button><button type="button" role="radio" aria-checked="false" aria-label="4" data-x="rate:4">😊</button><button type="button" role="radio" aria-checked="false" aria-label="5" data-x="rate:5">😍</button></div>
+          <label><span data-i18n="f_name">Your name (optional)</span><input id="fb-name" maxlength="40"></label>
+          <label><span data-i18n="f_comment">Tell us more (optional)</span><textarea id="fb-comment" rows="3" maxlength="400"></textarea></label>
+          <button type="button" class="primary-button" data-x="fsave" data-i18n="f_send">Save feedback</button></div>
+        <div id="fb-mount"></div>
+      </section>
+
+      <section class="view" id="settings-view">
+        <div class="page-intro"><span class="eyebrow" data-i18n="s_eyebrow">YOUR PHONE, YOUR WAY</span><h2 data-i18n="s_h">Accessibility settings</h2><p data-i18n="s_p">Adjust the screen to make it easier and more comfortable to use.</p></div>
+        <div class="setting-row"><div><strong id="lang-label" data-i18n="s_lang">Language</strong><small data-i18n="s_lang_s">Choose the language you prefer</small></div><div class="lang-controls" role="radiogroup" aria-labelledby="lang-label"><button type="button" role="radio" aria-checked="true" data-lang="en">English</button><button type="button" role="radio" aria-checked="false" data-lang="hi" lang="hi">हिन्दी</button><button type="button" role="radio" aria-checked="false" data-lang="kn" lang="kn">ಕನ್ನಡ</button><button type="button" role="radio" aria-checked="false" data-lang="ta" lang="ta">தமிழ்</button></div></div>
+        <div class="setting-row"><div><strong data-i18n="s_size">Text size</strong><small data-i18n="s_size_s">Make words easier to read</small></div><div class="size-controls" role="group"><button id="smaller-text" data-i18n-aria="s_smaller" aria-label="Decrease text size">A−</button><span class="size-label" id="size-label" aria-live="polite">Normal</span><button id="larger-text" data-i18n-aria="s_larger" aria-label="Increase text size">A+</button></div></div>
+        <div class="setting-row"><div><strong data-i18n="s_contrast">High contrast</strong><small data-i18n="s_contrast_s">Make text and buttons stand out</small></div><label class="switch"><input type="checkbox" id="contrast-toggle" data-i18n-aria="s_contrast" aria-label="High contrast"><span class="slider"></span></label></div>
+        <div class="setting-row"><div><strong data-i18n="s_spacing">Extra spacing</strong><small data-i18n="s_spacing_s">Add more space between buttons</small></div><label class="switch"><input type="checkbox" id="spacing-toggle" data-i18n-aria="s_spacing" aria-label="Extra spacing"><span class="slider"></span></label></div>
+        <div class="setting-row"><div><strong data-i18n="s_voice">Read instructions aloud</strong><small data-i18n="s_voice_s">Use your device's speech support</small></div><button class="secondary-button" id="test-voice"><span data-i18n="s_voice_btn">Try voice</span> <span aria-hidden="true">🔊</span></button></div>
+        <div class="notice"><span aria-hidden="true">✓</span><p data-i18n="s_notice">Your display preferences are applied immediately and saved on this device, so they will still be here next time.</p></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal-backdrop" id="modal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-copy">
+      <button class="modal-close" id="modal-close" data-i18n-aria="close" aria-label="Close">×</button>
+      <div class="modal-symbol" id="modal-symbol" aria-hidden="true">☎</div>
+      <h2 id="modal-title">Call Anita?</h2>
+      <p id="modal-copy">This is a demonstration. No call will be placed.</p>
+      <div class="modal-actions"><button class="secondary-button" id="modal-cancel" data-i18n="back">Go back</button><button class="primary-button" id="modal-confirm" data-i18n="okay">Okay</button></div>
+    </div>
+  </div>
+  <script src="translations.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
